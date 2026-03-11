@@ -4,6 +4,11 @@
 ### Overview
 This repository contains early prototypes (v1–v3) of a recursive neural architecture explicitly built on **QCD physics bones**: spontaneous symmetry breaking (SSB), Nambu-Goldstone modes as gapless excitations, and soft-mode resolution of information paradoxes across fractal scales.
 
+### Motivation: Physics First, Not Parameter Spam
+Billions get dumped into scaling LLMs while foundational physics — the **only** realistic path to Mars — starves. Propulsion beyond chemical rockets? Fusion drives, nuclear thermal, antimatter-catalyzed concepts? Radiation shielding for deep space? In-situ propellant production? All hard physics bottlenecks.
+
+This repo is a tiny proof that physics-inspired kernels can bootstrap coherent, persistent dynamics without obscene compute. If we redirected even 1% of the AI hype money to plasma/nuclear/quantum materials research, we'd be closer to interplanetary reality than any chatbot factory.
+
 - **Slip** triggers symmetry breaking → apparent paradox  
 - **Hyper-holographic projection** smears the whole into every part (redundant encoding)  
 - **Goldstone fluctuations** resolve the paradox softly, propagating coherence without energy cost  
