@@ -44,7 +44,25 @@ That's the signal: retrocausal coherence bootstrapping from dense, multi-scale f
 - `qcd_ai_v2.py` — stabilized with LayerNorm + clipping (no NaN, slow but steady learning)
 - `qcd_ai_v3.py` — Lorenz task + upgraded metrics + PCA viz (current best)
 
-### Quick Start
-```bash
-# Requires: torch, numpy, matplotlib, scikit-learn
-python qcd_ai_v3.py
+### U(1) Lattice Gauge Theory Demo (v4 / U1 branch)
+Extended the kernel to act as a learned global proposal for MCMC in 2D compact U(1) gauge theory (toy model for pure Yang-Mills with topological sectors).
+
+**Setup**:
+- Lattice: 8×8×2 links
+- β = 1.1 (near roughening/transition region)
+- Observable: topological charge Q = (1/(2π)) ∑ sin(plaquette angle)
+- Standard local Metropolis: τ ≈ 357 (severe critical slowing down)
+- Kernel proposal (self-supervised on random configs): τ ≈ 64 (~5.5× speedup in effective sampling rate)
+
+**Autocorrelation comparison** (see u1_autocorr.png):
+- Standard method decays slowly (local updates can't easily decorrelate topological sectors)
+- Kernel proposals decay much faster — the Goldstone fluctuations appear to help excite long-wavelength modes that standard updates miss.
+
+This is preliminary, but the kernel is showing qualitative improvement in handling critical dynamics — exactly the kind of bottleneck that plagues lattice QCD near chiral/deconfinement transitions and at finite density.
+
+SU(3) configs on hand — future work will test on real gauge ensembles (topological charge diffusion, autocorrelation of Wilson loops, etc.).
+
+Physics needs the money back. Lattice sampling is compute-starved while AI hype burns billions. A small shift in priorities could accelerate real discoveries.
+
+Plot: u1_autocorr.png (attached)
+Code: qcd_ai_u1_demo.py<img width="1000" height="600" alt="u1_autocorr_fixed" src="https://github.com/user-attachments/assets/cec35834-f895-4ccc-b414-107112386a4c" />
